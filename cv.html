@@ -819,13 +819,50 @@
 
     <script>
         function downloadCV() {
-            // Create a complete, self-contained HTML document
-            const cvContent = `<!DOCTYPE html>
+            // Convert profile image to base64 for embedding
+            function getImageAsBase64(callback) {
+                const img = document.querySelector('.profile-image img');
+                if (!img || img.style.display === 'none') {
+                    callback(null);
+                    return;
+                }
+                
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                
+                const image = new Image();
+                image.crossOrigin = 'anonymous';
+                image.onload = function() {
+                    canvas.width = image.width;
+                    canvas.height = image.height;
+                    ctx.drawImage(image, 0, 0);
+                    try {
+                        const dataURL = canvas.toDataURL('image/png');
+                        callback(dataURL);
+                    } catch (e) {
+                        console.log('Could not convert image to base64:', e);
+                        callback(null);
+                    }
+                };
+                image.onerror = function() {
+                    callback(null);
+                };
+                image.src = img.src;
+            }
+            
+            getImageAsBase64(function(base64Image) {
+                // Create the CV content with the embedded image
+                const profileImageHTML = base64Image 
+                    ? `<img src="${base64Image}" alt="Bissih Fred">`
+                    : `<i class="fas fa-user-circle" style="font-size: 3rem; color: rgba(255,255,255,0.7);"></i>`;
+                
+                const cvContent = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bissih Fred - Curriculum Vitae</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
         
@@ -873,42 +910,46 @@
             overflow: hidden;
             border: 4px solid rgba(255,255,255,0.2);
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .profile-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 50%;
         }
 
-        .profile-fallback {
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .profile-image i {
             font-size: 3rem;
             color: rgba(255,255,255,0.7);
         }
 
         .profile-name {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             color: #fff;
         }
 
         .profile-title {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #87ceeb;
-            margin-bottom: 15px;
-            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .sidebar-section {
-            padding: 30px;
+            padding: 30px 30px;
             border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .sidebar-section:last-child {
+            border-bottom: none;
             flex: 1;
         }
 
@@ -924,6 +965,7 @@
 
         .sidebar-content {
             font-size: 0.9rem;
+            line-height: 1.8;
         }
 
         .contact-item {
@@ -979,41 +1021,40 @@
         }
 
         .reference-title {
-            color: #87ceeb;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.7);
             margin-bottom: 5px;
         }
 
         .reference-contact {
-            color: rgba(255,255,255,0.8);
             font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
         }
 
         .main-content {
             flex: 1;
-            padding: 40px;
-            background: white;
+            padding: 40px 50px;
         }
 
-        .header {
-            text-align: center;
+        .header-section {
             margin-bottom: 40px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid #2c5f88;
         }
 
-        .name {
+        .main-name {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #2c5f88;
-            margin-bottom: 10px;
+            color: #333;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .title {
-            font-size: 1.3rem;
-            color: #87ceeb;
-            font-weight: 400;
-            margin-bottom: 15px;
+        .main-title {
+            font-size: 1rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
         }
 
         .contact-info-main {
@@ -1037,115 +1078,109 @@
         .section-title {
             font-size: 1.1rem;
             font-weight: 600;
-            color: #2c5f88;
-            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-left: 4px solid #87ceeb;
-            padding-left: 15px;
+            color: #2c5f88;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #87ceeb;
         }
 
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 15px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: #87ceeb;
-        }
-
-        .timeline-item {
-            position: relative;
+        .experience-item, .education-item {
+            display: flex;
             margin-bottom: 30px;
-            padding-left: 30px;
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -7px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #2c5f88;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px #87ceeb;
+        .date-column {
+            width: 120px;
+            flex-shrink: 0;
+            padding-right: 20px;
         }
 
-        .timeline-date {
-            font-size: 0.85rem;
-            color: #87ceeb;
+        .date-range {
             font-weight: 600;
-            margin-bottom: 5px;
+            color: #333;
+            font-size: 0.9rem;
         }
 
-        .timeline-title {
-            font-size: 1rem;
+        .location {
+            font-size: 0.8rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        .content-column {
+            flex: 1;
+        }
+
+        .job-title, .degree-title {
             font-weight: 600;
             color: #2c5f88;
             margin-bottom: 5px;
         }
 
-        .timeline-subtitle {
-            font-size: 0.9rem;
+        .company, .institution {
             color: #666;
             margin-bottom: 10px;
             font-style: italic;
         }
 
-        .timeline-content {
+        .description ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .description li {
+            margin-bottom: 5px;
             color: #555;
-            line-height: 1.6;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
-        .skill-item {
+        .skill-category h4 {
+            font-weight: 600;
+            color: #2c5f88;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .skill-bar {
             margin-bottom: 15px;
         }
 
         .skill-name {
-            display: flex;
-            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #555;
             margin-bottom: 5px;
-            font-weight: 500;
         }
 
-        .skill-bar {
-            height: 6px;
-            background: #e0e0e0;
-            border-radius: 3px;
+        .skill-progress {
+            height: 4px;
+            background: #e8f4f8;
+            border-radius: 2px;
             overflow: hidden;
         }
 
-        .skill-bar-fill {
+        .skill-fill {
             height: 100%;
-            background: linear-gradient(135deg, #4a90e2, #87ceeb);
-            border-radius: 3px;
-            transition: width 1s ease-in-out;
+            background: linear-gradient(90deg, #2c5f88 0%, #87ceeb 100%);
+            transition: width 0.3s ease;
         }
 
-        .publications-list {
-            list-style: none;
-        }
-
-        .publication-item {
+        .research-item {
             margin-bottom: 20px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-left: 4px solid #87ceeb;
-            border-radius: 0 5px 5px 0;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .research-item:last-child {
+            border-bottom: none;
         }
 
         .research-title {
@@ -1162,6 +1197,16 @@
         }
 
         @media print {
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                max-width: none;
+            }
+            
+            body {
+                background: white;
+            }
+            
             .sidebar {
                 background: #2c5f88 !important;
                 color: white !important;
@@ -1169,6 +1214,7 @@
                 print-color-adjust: exact;
             }
             
+            .sidebar h1,
             .sidebar h2,
             .sidebar h3,
             .sidebar p,
@@ -1178,8 +1224,8 @@
                 print-color-adjust: exact;
             }
             
-            .skill-bar-fill {
-                background: linear-gradient(135deg, #4a90e2, #87ceeb) !important;
+            .skill-fill {
+                background: linear-gradient(90deg, #2c5f88 0%, #87ceeb 100%) !important;
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
@@ -1198,25 +1244,54 @@
             .main-content {
                 padding: 30px 20px;
             }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-item, .education-item {
+                flex-direction: column;
+            }
+            
+            .date-column {
+                width: auto;
+                padding-right: 0;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    ${document.querySelector('.cv-container').outerHTML}
+    <div class="cv-container">
+        <div class="sidebar">
+            <div class="profile-section">
+                <div class="profile-image">
+                    ${profileImageHTML}
+                </div>
+                <h1 class="profile-name">Bissih<br>Fred</h1>
+                <p class="profile-title">PhD Candidate</p>
+            </div>
+            ${document.querySelector('.sidebar').innerHTML.replace(/<div class="profile-section">[\s\S]*?<\/div>/, '')}
+        </div>
+        <div class="main-content">
+            ${document.querySelector('.main-content').innerHTML}
+        </div>
+    </div>
 </body>
 </html>`;
 
-            // Create download
-            const blob = new Blob([cvContent], { type: 'text/html' });
-            const url = URL.createObjectURL(blob);
-            
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'BISSIH_FRED_CV.html';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            URL.revokeObjectURL(url);
+                // Create download
+                const blob = new Blob([cvContent], { type: 'text/html' });
+                const url = URL.createObjectURL(blob);
+                
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'BISSIH_FRED_CV.html';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            });
         }
 
         // Add keyboard shortcut for download
