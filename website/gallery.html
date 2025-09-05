@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Dr. Bissih Fred</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery-page {
+            padding: 80px 0 40px;
+            min-height: 100vh;
+        }
+        
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .gallery-header h1 {
+            font-size: 3rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .gallery-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .gallery-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        
+        .category-btn {
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .category-btn:hover,
+        .category-btn.active {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item img,
+        .gallery-item video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .gallery-item-content {
+            padding: 20px;
+        }
+        
+        .gallery-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .gallery-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-to-home">← Back to Home</a>
+    
+    <div class="gallery-page">
+        <div class="container">
+            <div class="gallery-header">
+                <h1>Research Gallery</h1>
+                <p>Explore my work in aquaculture nutrition, research experiments, conference presentations, and laboratory activities</p>
+            </div>
+            
+            <div class="gallery-categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="research">Research</button>
+                <button class="category-btn" data-category="conferences">Conferences</button>
+                <button class="category-btn" data-category="laboratory">Laboratory</button>
+                <button class="category-btn" data-category="field-work">Field Work</button>
+            </div>
+            
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Research Category -->
+                <div class="gallery-item" data-category="research">
+                    <img src="images/research/SEA experiment on pampano fish+sampling/23419718e703dbb177315d3a7cdff785.jpg" alt="Research experiment">
+                    <div class="gallery-item-content">
+                        <h3>Pampano Fish Research</h3>
+                        <p>SEA experiment on pampano fish with detailed sampling and analysis.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="research">
+                    <img src="images/research/SEA experiment on pampano fish+sampling/763a5826a4f4705eaa5850dd9a05e4ae.jpg" alt="Fish sampling">
+                    <div class="gallery-item-content">
+                        <h3>Fish Sampling Process</h3>
+                        <p>Collecting samples for nutritional analysis and growth monitoring.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="research">
+                    <img src="images/research/SEA experiment on pampano fish+sampling/c3bbf15661093cc78b5ff1b11556a67f.jpg" alt="Experiment setup">
+                    <div class="gallery-item-content">
+                        <h3>Experimental Setup</h3>
+                        <p>Setting up controlled environment for fish nutrition studies.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="research">
+                    <img src="images/research/SEA experiment on pampano fish+sampling/c4a496ea9fb6afd3c2aa1dd5f2591753.jpg" alt="Research data">
+                    <div class="gallery-item-content">
+                        <h3>Data Collection</h3>
+                        <p>Gathering and recording important research parameters.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="research">
+                    <img src="images/research/SEA experiment on pampano fish+sampling/c923f158677fc22bd4efed0df2af34fa.jpg" alt="Research sample">
+                    <div class="gallery-item-content">
+                        <h3>Sample Analysis</h3>
+                        <p>Examining fish samples for nutritional composition studies.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="research">
+                    <video controls>
+                        <source src="images/research/SEA experiment on pampano fish+sampling/da9e5499bacfc7ad3f91ec5d50691164.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="gallery-item-content">
+                        <h3>Research Procedure Video</h3>
+                        <p>Video documentation of the SEA experiment procedure.</p>
+                    </div>
+                </div>
+                
+                <!-- Conference Category -->
+                <div class="gallery-item" data-category="conferences">
+                    <img src="images/conferences/conference/068141a899b2782ffbdcbfa3fd65a771.jpg" alt="Conference presentation">
+                    <div class="gallery-item-content">
+                        <h3>Academic Conference Presentation</h3>
+                        <p>Presenting research findings at an international aquaculture conference.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="conferences">
+                    <img src="images/conferences/conference/37ad49a9bb40fd3308a341a882755150.jpg" alt="Conference audience">
+                    <div class="gallery-item-content">
+                        <h3>Conference Engagement</h3>
+                        <p>Discussing research with colleagues and industry professionals.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="conferences">
+                    <img src="images/conferences/conference/7c647caaefeed19a0f4838a011370adb.jpg" alt="Conference poster">
+                    <div class="gallery-item-content">
+                        <h3>Research Poster Presentation</h3>
+                        <p>Displaying detailed findings through visual research poster.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="conferences">
+                    <img src="images/conferences/conference/d62d84e43f8ba2cc7c7a0bf1e5bf641a.jpg" alt="Conference panel">
+                    <div class="gallery-item-content">
+                        <h3>Expert Panel Discussion</h3>
+                        <p>Contributing to expert discussions on aquaculture nutrition.</p>
+                    </div>
+                </div>
+                
+                <!-- Laboratory Category -->
+                <div class="gallery-item" data-category="laboratory">
+                    <img src="images/laboratory/feed making/00152c9df01c530d7e97dd1bb9651767.jpg" alt="Feed preparation">
+                    <div class="gallery-item-content">
+                        <h3>Feed Formulation</h3>
+                        <p>Preparing specialized nutritional fish feed in the laboratory.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="laboratory">
+                    <img src="images/laboratory/feed making/52131010e0f7a800dff9ddef3aa23fdf.jpg" alt="Feed ingredients">
+                    <div class="gallery-item-content">
+                        <h3>Nutritional Ingredients</h3>
+                        <p>Selection of high-quality ingredients for feed experiments.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="laboratory">
+                    <video controls>
+                        <source src="images/laboratory/feed making/80f1ee808d4f661666e6a2760f0f8806.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="gallery-item-content">
+                        <h3>Feed Processing Video</h3>
+                        <p>Demonstration of the feed preparation process.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="laboratory">
+                    <img src="images/laboratory/feed making/a3a537263848efe474305c8670db9617.jpg" alt="Lab equipment">
+                    <div class="gallery-item-content">
+                        <h3>Laboratory Equipment</h3>
+                        <p>Specialized tools used for feed analysis and preparation.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="laboratory">
+                    <img src="images/laboratory/feed making/a7c36131415f170ff474d7dc2058b0bc.jpg" alt="Feed analysis">
+                    <div class="gallery-item-content">
+                        <h3>Nutritional Analysis</h3>
+                        <p>Analyzing the nutritional composition of experimental feed.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="laboratory">
+                    <img src="images/laboratory/feed making/aa047714ac9397d7abf24f5c4c13174c.jpg" alt="Feed experiment">
+                    <div class="gallery-item-content">
+                        <h3>Feed Experiment Setup</h3>
+                        <p>Setting up controlled experiments for feed efficacy testing.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="laboratory">
+                    <img src="images/laboratory/feed making/b69fcb0c75db473ea604bb6eb2e8249a.jpg" alt="Feed production">
+                    <div class="gallery-item-content">
+                        <h3>Feed Production Process</h3>
+                        <p>Manufacturing specialized feed for aquaculture research.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="laboratory">
+                    <video controls>
+                        <source src="images/laboratory/feed making/d122184b007b55881717e1ddc5e23690.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="gallery-item-content">
+                        <h3>Laboratory Procedure Video</h3>
+                        <p>Video demonstrating detailed laboratory procedures.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="laboratory">
+                    <img src="images/laboratory/feed making/db42bd5b0cb0eb5c7d0a182b58f7e225.jpg" alt="Feed testing">
+                    <div class="gallery-item-content">
+                        <h3>Feed Quality Testing</h3>
+                        <p>Evaluating the quality parameters of produced feed.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="laboratory">
+                    <img src="images/laboratory/feed making/fd9552b08e5ec2adf8ad29d5d492ea37.jpg" alt="Feed components">
+                    <div class="gallery-item-content">
+                        <h3>Feed Component Analysis</h3>
+                        <p>Examining individual components for nutritional value.</p>
+                    </div>
+                </div>
+
+                <!-- Some Field Work Items (Using relevant research images) -->
+                <div class="gallery-item" data-category="field-work">
+                    <img src="images/research/SEA experiment on pampano fish+sampling/763a5826a4f4705eaa5850dd9a05e4ae.jpg" alt="Field sampling">
+                    <div class="gallery-item-content">
+                        <h3>Field Sampling</h3>
+                        <p>Collecting samples in natural aquatic environments.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="field-work">
+                    <img src="images/research/SEA experiment on pampano fish+sampling/c4a496ea9fb6afd3c2aa1dd5f2591753.jpg" alt="Field data collection">
+                    <div class="gallery-item-content">
+                        <h3>Field Data Collection</h3>
+                        <p>Gathering important data during field research activities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Gallery filtering functionality
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const category = btn.getAttribute('data-category');
+                
+                // Filter gallery items
+                galleryItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
