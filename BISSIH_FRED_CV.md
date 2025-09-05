@@ -2,9 +2,9 @@
 
 **Name:** Bissih Fred  
 **Title:** PhD Candidate | Aquaculture Nutritionist & Feed Technologist  
-**Email:** bissihfred@email.com  
-**Phone:** +86 xxx xxxx xxxx  
-**Location:** Zhanjiang, China / Kenya  
+**Email:** fredbissih@gmail.com  
+**Phone:** +86 132 4651 6503  
+**Location:** Zhanjiang, China  
 
 ---
 
