@@ -157,6 +157,22 @@ body {
     color: #2c5aa0;
 }
 
+.btn-download {
+    background: #28a745;
+    color: #fff;
+    border: 2px solid #28a745;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-download:hover {
+    background: #218838;
+    border-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(40, 167, 69, 0.3);
+}
+
 .profile-card {
     display: flex;
     justify-content: center;

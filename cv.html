@@ -197,6 +197,26 @@
             transform: translateY(-2px);
         }
 
+        .download-btn {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+
         .back-btn {
             position: fixed;
             top: 20px;
@@ -222,7 +242,7 @@
         }
 
         @media print {
-            .print-btn, .back-btn {
+            .print-btn, .back-btn, .download-btn {
                 display: none;
             }
             
@@ -259,7 +279,7 @@
                 padding: 30px 20px;
             }
             
-            .print-btn, .back-btn {
+            .print-btn, .back-btn, .download-btn {
                 position: relative;
                 margin: 10px;
             }
@@ -275,6 +295,11 @@
     <button class="print-btn" onclick="window.print()">
         <i class="fas fa-print"></i>
         Print CV
+    </button>
+
+    <button class="download-btn" onclick="downloadCV()">
+        <i class="fas fa-download"></i>
+        Download PDF
     </button>
 
     <div class="cv-container">
@@ -509,5 +534,41 @@
             </section>
         </div>
     </div>
+
+    <script>
+        function downloadCV() {
+            // Create a temporary link element for download
+            const link = document.createElement('a');
+            
+            // For modern browsers, we'll use the print-to-PDF approach
+            if (window.navigator.userAgent.includes('Chrome') || window.navigator.userAgent.includes('Edge')) {
+                // Chrome/Edge: Use print dialog with save as PDF
+                window.print();
+            } else {
+                // Fallback: Generate HTML content for download
+                const htmlContent = document.documentElement.outerHTML;
+                const blob = new Blob([htmlContent], { type: 'text/html' });
+                const url = URL.createObjectURL(blob);
+                
+                link.href = url;
+                link.download = 'BISSIH_FRED_CV.html';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+                
+                // Show instructions
+                alert('CV downloaded as HTML file. To convert to PDF:\n1. Open the downloaded file in your browser\n2. Press Ctrl+P (Cmd+P on Mac)\n3. Choose "Save as PDF"');
+            }
+        }
+
+        // Add keyboard shortcut for download
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
+                e.preventDefault();
+                downloadCV();
+            }
+        });
+    </script>
 </body>
 </html>

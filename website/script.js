@@ -237,3 +237,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// CV Download Function
+function downloadCV() {
+    // Open the CV page in a new window/tab and trigger download
+    const cvWindow = window.open('../cv.html', '_blank');
+    
+    // Wait for the CV page to load and then trigger print/download
+    cvWindow.onload = function() {
+        setTimeout(() => {
+            cvWindow.print();
+        }, 1000);
+    };
+    
+    // Fallback for browsers that don't support the above
+    if (!cvWindow) {
+        // If popup is blocked, redirect to CV page
+        window.open('../cv.html', '_blank');
+        alert('Please use the "Download PDF" button on the CV page to download your CV.');
+    }
+}
+
+// Add keyboard shortcut for CV download
+document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'D') {
+        e.preventDefault();
+        downloadCV();
+    }
+});
