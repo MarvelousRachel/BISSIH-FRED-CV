@@ -717,7 +717,7 @@ function downloadCV() {
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-researchgate"></i>
-                        <a href="https://www.researchgate.net/profile/Fred-Bissih" target="_blank" style="color: #87ceeb; text-decoration: underline; font-size: 0.8rem;">🌐 ResearchGate</a>
+                        <a href="https://www.researchgate.net/profile/Fred-Bissih" target="_blank" style="color: #87ceeb; text-decoration: underline; font-size: 0.8rem;">Profile</a>
                     </div>
                 </div>
             </div>
@@ -1000,6 +1000,21 @@ function downloadCV() {
         link.click();
         document.body.removeChild(link);
         URL.revokeObjectURL(url);
+    });
+}
+
+function downloadPDF() {
+    // Open CV page in a new window and trigger PDF download
+    const cvWindow = window.open('../cv.html', '_blank');
+    
+    // Wait for the page to load then trigger PDF download
+    cvWindow.addEventListener('load', function() {
+        setTimeout(() => {
+            cvWindow.alert('Please select "Save as PDF" in the print dialog that will open next.');
+            setTimeout(() => {
+                cvWindow.print();
+            }, 500);
+        }, 1000);
     });
 }
 

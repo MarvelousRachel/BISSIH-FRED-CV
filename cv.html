@@ -370,6 +370,12 @@
             font-weight: 600;
         }
 
+        .btn-pdf {
+            background: #e74c3c;
+            color: white;
+            font-weight: 600;
+        }
+
         .btn-back {
             background: #6c757d;
             color: white;
@@ -466,7 +472,11 @@
         </button>
         <button class="btn btn-download" onclick="downloadCV()">
             <i class="fas fa-download"></i>
-            Download
+            Download HTML
+        </button>
+        <button class="btn btn-pdf" onclick="downloadPDF()">
+            <i class="fas fa-file-pdf"></i>
+            Download PDF
         </button>
     </div>
 
@@ -507,7 +517,7 @@
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-researchgate"></i>
-                        <a href="https://www.researchgate.net/profile/Fred-Bissih" target="_blank" style="color: #87ceeb; text-decoration: underline; font-size: 0.8rem;">🌐 ResearchGate</a>
+                        <a href="https://www.researchgate.net/profile/Fred-Bissih" target="_blank" style="color: #87ceeb; text-decoration: underline; font-size: 0.8rem;">Profile</a>
                     </div>
                 </div>
             </div>
@@ -1289,6 +1299,35 @@
                 document.body.removeChild(link);
                 URL.revokeObjectURL(url);
             });
+        }
+
+        function downloadPDF() {
+            // Use the browser's print to PDF functionality
+            const printButton = document.querySelector('.btn-print');
+            const downloadButton = document.querySelector('.btn-download');
+            const pdfButton = document.querySelector('.btn-pdf');
+            const backButton = document.querySelector('.btn-back');
+            
+            // Hide action buttons temporarily
+            printButton.style.display = 'none';
+            downloadButton.style.display = 'none';
+            pdfButton.style.display = 'none';
+            backButton.style.display = 'none';
+            
+            // Trigger print dialog with instructions
+            alert('Please select "Save as PDF" in the print dialog that will open next.');
+            
+            setTimeout(() => {
+                window.print();
+                
+                // Restore buttons after print dialog
+                setTimeout(() => {
+                    printButton.style.display = 'flex';
+                    downloadButton.style.display = 'flex';
+                    pdfButton.style.display = 'flex';
+                    backButton.style.display = 'flex';
+                }, 1000);
+            }, 500);
         }
 
         // Add keyboard shortcut for download
