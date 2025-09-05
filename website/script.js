@@ -717,7 +717,7 @@ function downloadCV() {
                     </div>
                     <div class="contact-item">
                         <i class="fab fa-researchgate"></i>
-                        <a href="https://www.researchgate.net/profile/Fred-Bissih" target="_blank" style="color: #87ceeb; text-decoration: underline;">🌐 https://www.researchgate.net/profile/Fred-Bissih</a>
+                        <a href="https://www.researchgate.net/profile/Fred-Bissih" target="_blank" style="color: #87ceeb; text-decoration: underline; font-size: 0.8rem;">🌐 ResearchGate</a>
                     </div>
                 </div>
             </div>
