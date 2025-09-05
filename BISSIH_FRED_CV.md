@@ -30,7 +30,6 @@ Innovative and results-driven **aquaculture nutritionist and feed technologist**
 ### BSc in Natural Resources Management (Fisheries & Aquaculture option)
 **University of Energy and Natural Resources – Sunyani, Ghana** (2012 - 2016)
 - **Thesis:** Successful replacement of fishmeal with Black Soldier Fly meal in the diet of Nile Tilapia (Oreochromis niloticus)
-- **Achievement:** Graduated with First Class Honors
 
 ---
 
@@ -42,7 +41,7 @@ Innovative and results-driven **aquaculture nutritionist and feed technologist**
 - Conducted two-year sea cage feeding trials on Golden pompano, optimizing growth performance by 18%
 - Completed industrial internship at Guangdong Yuehai Feed Company, formulating novel commercial feeds for Golden pompano that reduced production costs by 12%
 - Developed innovative high-lipid feed formulations that improved feed conversion ratio by 0.3 points
-- Published research findings in peer-reviewed journals on amino acid and lipid requirements
+- Research findings on amino acid and lipid requirements currently under review for publication in peer-reviewed journals
 
 ### MSc Researcher – Key Laboratory of Aquatic Animal Genetic Breeding and Nutrition
 **Chinese Academy of Fishery Sciences / Huzhou University, China** (2018 – 2020)
@@ -117,19 +116,19 @@ Innovative and results-driven **aquaculture nutritionist and feed technologist**
 
 ## RESEARCH & PUBLICATIONS
 
-### Peer-Reviewed Publications
+### Publications & Manuscripts Under Review
 
-1. **Effects of replacing fish meal by plant protein sources in fish feed on serum and muscle cholesterol levels, cholesterol metabolism-related enzyme activity and gene expression of fish.** DOI: 10.2478/aoas-2025-0065
+1. **Effects of replacing fish meal by plant protein sources in fish feed on serum and muscle cholesterol levels, cholesterol metabolism-related enzyme activity and gene expression of fish.** *(Under Review)* DOI: 10.2478/aoas-2025-0065
 
-2. **One-step and two-step qPCR assays for CAPRV2023: development and application in full-cycle epidemiological surveillance of golden pompano.** DOI: 10.3389/fvets.2025.1620997
+2. **One-step and two-step qPCR assays for CAPRV2023: development and application in full-cycle epidemiological surveillance of golden pompano.** *(Under Review)* DOI: 10.3389/fvets.2025.1620997
 
-3. **Investigating the effect of acute toxicity exposure to combined FeSO4 and FeCl3 in Litopenaeus vannamei through analysis of survival, metal accumulation, oxidative stress, and intestinal flora.** DOI: 10.1016/j.ecoenv.2025.117923
+3. **Investigating the effect of acute toxicity exposure to combined FeSO4 and FeCl3 in Litopenaeus vannamei through analysis of survival, metal accumulation, oxidative stress, and intestinal flora.** *(Under Review)* DOI: 10.1016/j.ecoenv.2025.117923
 
-4. **Probiotics and paraprobiotics in aquaculture: a sustainable strategy for enhancing fish growth, health and disease prevention - a review.** DOI: 10.3389/fmars.2024.1499228
+4. **Probiotics and paraprobiotics in aquaculture: a sustainable strategy for enhancing fish growth, health and disease prevention - a review.** *(Under Review)* DOI: 10.3389/fmars.2024.1499228
 
-5. **Advancements in Sensor Fusion for Underwater SLAM: A Review on Enhanced Navigation and Environmental Perception.** DOI: 10.3390/s24237490
+5. **Advancements in Sensor Fusion for Underwater SLAM: A Review on Enhanced Navigation and Environmental Perception.** *(Under Review)* DOI: 10.3390/s24237490
 
-6. **Enhancing Underwater SLAM Navigation and Perception: A Comprehensive Review of Deep Learning Integration.** DOI: 10.3390/s24217034
+6. **Enhancing Underwater SLAM Navigation and Perception: A Comprehensive Review of Deep Learning Integration.** *(Under Review)* DOI: 10.3390/s24217034
 
 ### Theses & Research Projects
 
