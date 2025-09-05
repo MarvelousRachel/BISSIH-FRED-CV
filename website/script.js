@@ -716,8 +716,8 @@ function downloadCV() {
                         <span>fredbissih@gmail.com</span>
                     </div>
                     <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn Profile</span>
+                        <i class="fab fa-researchgate"></i>
+                        <a href="https://www.researchgate.net/profile/Fred-Bissih" target="_blank" style="color: #87ceeb; text-decoration: underline;">🌐 https://www.researchgate.net/profile/Fred-Bissih</a>
                     </div>
                 </div>
             </div>
