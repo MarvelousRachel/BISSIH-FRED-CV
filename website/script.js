@@ -330,7 +330,6 @@ function downloadCV() {
             border-radius: 50%;
             margin: 0 auto 20px;
             overflow: hidden;
-            border: 4px solid rgba(255,255,255,0.2);
             position: relative;
             display: flex;
             align-items: center;
