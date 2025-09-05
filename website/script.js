@@ -1004,18 +1004,13 @@ function downloadCV() {
 }
 
 function downloadPDF() {
-    // Open CV page in a new window and trigger PDF download
+    // Simple approach: just open the CV page in a new tab
+    // The user can then use the PDF download button on that page
     const cvWindow = window.open('../cv.html', '_blank');
     
-    // Wait for the page to load then trigger PDF download
-    cvWindow.addEventListener('load', function() {
-        setTimeout(() => {
-            cvWindow.alert('Please select "Save as PDF" in the print dialog that will open next.');
-            setTimeout(() => {
-                cvWindow.print();
-            }, 500);
-        }, 1000);
-    });
+    if (!cvWindow) {
+        alert('Popup blocked! Please allow popups and try again.');
+    }
 }
 
 // Add keyboard shortcut for CV download

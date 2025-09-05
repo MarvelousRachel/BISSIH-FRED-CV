@@ -1302,32 +1302,42 @@
         }
 
         function downloadPDF() {
-            // Use the browser's print to PDF functionality
-            const printButton = document.querySelector('.btn-print');
-            const downloadButton = document.querySelector('.btn-download');
-            const pdfButton = document.querySelector('.btn-pdf');
-            const backButton = document.querySelector('.btn-back');
+            // Simple and reliable PDF download using browser's print functionality
+            // Hide action buttons for clean PDF
+            const actionButtons = document.querySelector('.action-buttons');
+            const originalDisplay = actionButtons.style.display;
+            actionButtons.style.display = 'none';
             
-            // Hide action buttons temporarily
-            printButton.style.display = 'none';
-            downloadButton.style.display = 'none';
-            pdfButton.style.display = 'none';
-            backButton.style.display = 'none';
+            // Add instruction for user
+            const instruction = document.createElement('div');
+            instruction.style.cssText = `
+                position: fixed;
+                top: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #2c5f88;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 5px;
+                z-index: 10000;
+                font-family: Arial, sans-serif;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            `;
+            instruction.textContent = 'Print dialog will open. Select "Save as PDF" as destination.';
+            document.body.appendChild(instruction);
             
-            // Trigger print dialog with instructions
-            alert('Please select "Save as PDF" in the print dialog that will open next.');
-            
+            // Wait a moment then trigger print
             setTimeout(() => {
                 window.print();
                 
-                // Restore buttons after print dialog
+                // Clean up after print dialog
                 setTimeout(() => {
-                    printButton.style.display = 'flex';
-                    downloadButton.style.display = 'flex';
-                    pdfButton.style.display = 'flex';
-                    backButton.style.display = 'flex';
+                    actionButtons.style.display = originalDisplay;
+                    if (document.body.contains(instruction)) {
+                        document.body.removeChild(instruction);
+                    }
                 }, 1000);
-            }, 500);
+            }, 1000);
         }
 
         // Add keyboard shortcut for download
