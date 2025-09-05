@@ -102,19 +102,69 @@ Innovative and results-driven **aquaculture nutritionist and feed technologist**
 - Teaching & Mentoring: Capacity to train junior researchers and convey complex concepts
 - International Collaboration: Extensive experience working across cultural boundaries
 
-**Languages:**
-- Fluent in English
-- Intermediate Chinese
-- Basic French
+**Language Proficiency:**
+- English (Fluent)
+- Mandarin Chinese (Intermediate)  
+- French (Basic)
+- Ewe (Native)
+- Twi (Conversational)
+- Ga (Basic)
 
 **Personal Interests:**
 - Professional swimming coach, footballer, pianist, guitarist (demonstrating discipline & teamwork)
 
 ---
 
+## RESEARCH & PUBLICATIONS
+
+### Peer-Reviewed Publications
+
+1. **Effects of replacing fish meal by plant protein sources in fish feed on serum and muscle cholesterol levels, cholesterol metabolism-related enzyme activity and gene expression of fish.** DOI: 10.2478/aoas-2025-0065
+
+2. **One-step and two-step qPCR assays for CAPRV2023: development and application in full-cycle epidemiological surveillance of golden pompano.** DOI: 10.3389/fvets.2025.1620997
+
+3. **Investigating the effect of acute toxicity exposure to combined FeSO4 and FeCl3 in Litopenaeus vannamei through analysis of survival, metal accumulation, oxidative stress, and intestinal flora.** DOI: 10.1016/j.ecoenv.2025.117923
+
+4. **Probiotics and paraprobiotics in aquaculture: a sustainable strategy for enhancing fish growth, health and disease prevention - a review.** DOI: 10.3389/fmars.2024.1499228
+
+5. **Advancements in Sensor Fusion for Underwater SLAM: A Review on Enhanced Navigation and Environmental Perception.** DOI: 10.3390/s24237490
+
+6. **Enhancing Underwater SLAM Navigation and Perception: A Comprehensive Review of Deep Learning Integration.** DOI: 10.3390/s24217034
+
+### Theses & Research Projects
+
+- **BSc Thesis:** "Effect of Farm Made and a Commercial Feed on Length-Weight Relationship and Condition Factor of Nile Tilapia in Ponds"
+
+- **MSc Thesis:** "Effects of Fish Meal Substitution with Low-Gossypol Cottonseed Meal on Growth, Digestive and Antioxidant Ability in Juvenile Largemouth Bass"
+
+### Project Contributions
+
+- **Evaluation of Fisheries and Coastal Management Capacity Building Support Project Final Performance Evaluation Report (USAID)** - Contributed to project evaluation, Published 2020. Available at: https://pdf.usaid.gov/pdf_docs/PA00XDQG.pdf
+
+---
+
 ## REFERENCES
 
-Available upon request
+### 1. Dr. Etornyo Agbeko
+**Position:** Senior Researcher  
+**Institution:** Aquaculture Research and Development Center  
+**Location:** Akosombo, Ghana  
+**Email:** etornyo@gmail.com  
+**Tel:** +233 245 857 063
+
+### 2. Professor Shuyan Chi
+**Position:** Professor & PhD Supervisor  
+**Institution:** Laboratory of Aquatic Animal Nutrition and Feed, Fisheries College, Guangdong Ocean University  
+**Location:** Zhanjiang, China  
+**Email:** chishuyan77@163.com  
+**Tel:** +86 134 3786 6320
+
+### 3. Professor Chenlong Wu
+**Position:** Professor & MSc Supervisor  
+**Institution:** Key Laboratory of Aquatic Animal Genetic Breeding and Nutrition, Chinese Academy of Fishery Sciences, Huzhou University School of Life Science  
+**Location:** Zhejiang 313000, China  
+**Email:** wuchenglong007@163.com  
+**Tel:** +86 136 1672 7998
 
 ---
 

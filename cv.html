@@ -177,6 +177,94 @@
             left: 0;
         }
 
+        .research-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .research-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2c5f88;
+        }
+
+        .research-item h4 {
+            font-weight: 600;
+            color: #2c5f88;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .research-item ul {
+            padding-left: 20px;
+        }
+
+        .research-item li {
+            margin-bottom: 12px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .research-item a {
+            color: #2c5f88;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .research-item a:hover {
+            text-decoration: underline;
+        }
+
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .reference-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #2c5f88;
+        }
+
+        .reference-item h4 {
+            font-weight: 600;
+            color: #2c5f88;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .reference-details p {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .reference-details strong {
+            color: #333;
+        }
+
+        .reference-item .contact-info {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .reference-item .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+
+        .reference-item .contact-info i {
+            color: #2c5f88;
+            width: 16px;
+        }
+
         .print-btn {
             position: fixed;
             top: 20px;
@@ -512,12 +600,66 @@
                     </div>
 
                     <div class="skill-category">
-                        <h4>Languages & Personal</h4>
+                        <h4>Language Proficiency</h4>
                         <ul>
-                            <li>Fluent in English</li>
-                            <li>Intermediate Chinese</li>
-                            <li>Basic French</li>
-                            <li>Professional swimming coach, footballer, pianist, guitarist</li>
+                            <li>English (Fluent)</li>
+                            <li>Mandarin Chinese (Intermediate)</li>
+                            <li>French (Basic)</li>
+                            <li>Ewe (Native)</li>
+                            <li>Twi (Conversational)</li>
+                            <li>Ga (Basic)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Personal Interests</h4>
+                        <ul>
+                            <li>Professional swimming coach</li>
+                            <li>Football player</li>
+                            <li>Pianist</li>
+                            <li>Guitarist</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">
+                    <i class="fas fa-flask"></i>
+                    Research & Publications
+                </h2>
+                
+                <div class="research-list">
+                    <div class="research-item">
+                        <h4>Peer-Reviewed Publications</h4>
+                        <ul>
+                            <li><strong>Effects of replacing fish meal by plant protein sources in fish feed on serum and muscle cholesterol levels, cholesterol metabolism-related enzyme activity and gene expression of fish.</strong> DOI: 10.2478/aoas-2025-0065</li>
+                            
+                            <li><strong>One-step and two-step qPCR assays for CAPRV2023: development and application in full-cycle epidemiological surveillance of golden pompano.</strong> DOI: 10.3389/fvets.2025.1620997</li>
+                            
+                            <li><strong>Investigating the effect of acute toxicity exposure to combined FeSO4 and FeCl3 in Litopenaeus vannamei through analysis of survival, metal accumulation, oxidative stress, and intestinal flora.</strong> DOI: 10.1016/j.ecoenv.2025.117923</li>
+                            
+                            <li><strong>Probiotics and paraprobiotics in aquaculture: a sustainable strategy for enhancing fish growth, health and disease prevention - a review.</strong> DOI: 10.3389/fmars.2024.1499228</li>
+                            
+                            <li><strong>Advancements in Sensor Fusion for Underwater SLAM: A Review on Enhanced Navigation and Environmental Perception.</strong> DOI: 10.3390/s24237490</li>
+                            
+                            <li><strong>Enhancing Underwater SLAM Navigation and Perception: A Comprehensive Review of Deep Learning Integration.</strong> DOI: 10.3390/s24217034</li>
+                        </ul>
+                    </div>
+
+                    <div class="research-item">
+                        <h4>Theses & Research Projects</h4>
+                        <ul>
+                            <li><strong>BSc Thesis:</strong> "Effect of Farm Made and a Commercial Feed on Length-Weight Relationship and Condition Factor of Nile Tilapia in Ponds"</li>
+                            
+                            <li><strong>MSc Thesis:</strong> "Effects of Fish Meal Substitution with Low-Gossypol Cottonseed Meal on Growth, Digestive and Antioxidant Ability in Juvenile Largemouth Bass"</li>
+                        </ul>
+                    </div>
+
+                    <div class="research-item">
+                        <h4>Project Contributions</h4>
+                        <ul>
+                            <li><strong>Evaluation of Fisheries and Coastal Management Capacity Building Support Project Final Performance Evaluation Report (USAID)</strong> - Contributed to project evaluation, Published 2020. Available at: <a href="https://pdf.usaid.gov/pdf_docs/PA00XDQG.pdf" target="_blank">https://pdf.usaid.gov/pdf_docs/PA00XDQG.pdf</a></li>
                         </ul>
                     </div>
                 </div>
@@ -528,8 +670,48 @@
                     <i class="fas fa-users"></i>
                     References
                 </h2>
-                <div class="objective">
-                    Available upon request
+                
+                <div class="references-grid">
+                    <div class="reference-item">
+                        <h4>Dr. Etornyo Agbeko</h4>
+                        <div class="reference-details">
+                            <p><strong>Position:</strong> Senior Researcher</p>
+                            <p><strong>Institution:</strong> Aquaculture Research and Development Center</p>
+                            <p><strong>Location:</strong> Akosombo, Ghana</p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> etornyo@gmail.com</p>
+                                <p><i class="fas fa-phone"></i> +233 245 857 063</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-item">
+                        <h4>Professor Shuyan Chi</h4>
+                        <div class="reference-details">
+                            <p><strong>Position:</strong> Professor & PhD Supervisor</p>
+                            <p><strong>Institution:</strong> Laboratory of Aquatic Animal Nutrition and Feed</p>
+                            <p><strong>Department:</strong> Fisheries College, Guangdong Ocean University</p>
+                            <p><strong>Location:</strong> Zhanjiang, China</p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> chishuyan77@163.com</p>
+                                <p><i class="fas fa-phone"></i> +86 134 3786 6320</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-item">
+                        <h4>Professor Chenlong Wu</h4>
+                        <div class="reference-details">
+                            <p><strong>Position:</strong> Professor & MSc Supervisor</p>
+                            <p><strong>Institution:</strong> Key Laboratory of Aquatic Animal Genetic Breeding and Nutrition</p>
+                            <p><strong>Department:</strong> Chinese Academy of Fishery Sciences, Huzhou University School of Life Science</p>
+                            <p><strong>Location:</strong> Zhejiang 313000, China</p>
+                            <div class="contact-info">
+                                <p><i class="fas fa-envelope"></i> wuchenglong007@163.com</p>
+                                <p><i class="fas fa-phone"></i> +86 136 1672 7998</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
