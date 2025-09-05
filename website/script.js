@@ -952,21 +952,37 @@ function downloadCV() {
 
             <div class="section">
                 <h2 class="section-title">Research & Publications</h2>
+                <h4 style="margin-bottom: 15px; color: #333;">Published Manuscripts</h4>
+                
                 <div class="research-item">
-                    <h3 class="research-title">Effects of dietary supplementation of Bacillus subtilis and selenium yeast on growth performance, immune response, and disease resistance of juvenile large yellow croaker (Larimichthys crocea)</h3>
-                    <p class="research-status">Status: Under Review</p>
+                    <h3 class="research-title">Effects of replacing fish meal by plant protein sources in fish feed on serum and muscle cholesterol levels, cholesterol metabolism-related enzyme activity and gene expression of fish.</h3>
+                    <p class="research-status">(Published) DOI: 10.2478/aoas-2025-0065</p>
                 </div>
                 <div class="research-item">
-                    <h3 class="research-title">Evaluation of fermented soybean meal as a fishmeal replacement in diets for juvenile pompano (Trachinotus ovatus): Effects on growth, digestibility, and gut health</h3>
-                    <p class="research-status">Status: Under Review</p>
+                    <h3 class="research-title">One-step and two-step qPCR assays for CAPRV2023: development and application in full-cycle epidemiological surveillance of golden pompano.</h3>
+                    <p class="research-status">(Published) DOI: 10.3389/fvets.2025.1620997</p>
                 </div>
                 <div class="research-item">
-                    <h3 class="research-title">Nutritional evaluation of black soldier fly larvae meal as a sustainable protein source in aquaculture feeds</h3>
-                    <p class="research-status">Status: In Preparation</p>
+                    <h3 class="research-title">Investigating the effect of acute toxicity exposure to combined FeSO4 and FeCl3 in Litopenaeus vannamei through analysis of survival, metal accumulation, oxidative stress, and intestinal flora.</h3>
+                    <p class="research-status">(Published) DOI: 10.1016/j.ecoenv.2025.117923</p>
                 </div>
                 <div class="research-item">
-                    <h3 class="research-title">Alternative protein sources for sustainable aquaculture: A comprehensive review of plant-based and insect-based ingredients</h3>
-                    <p class="research-status">Status: In Preparation</p>
+                    <h3 class="research-title">Probiotics and paraprobiotics in aquaculture: a sustainable strategy for enhancing fish growth, health and disease prevention - a review.</h3>
+                    <p class="research-status">(Published) DOI: 10.3389/fmars.2024.1499228</p>
+                </div>
+                <div class="research-item">
+                    <h3 class="research-title">Advancements in Sensor Fusion for Underwater SLAM: A Review on Enhanced Navigation and Environmental Perception.</h3>
+                    <p class="research-status">(Published) DOI: 10.3390/s24237490</p>
+                </div>
+                <div class="research-item">
+                    <h3 class="research-title">Enhancing Underwater SLAM Navigation and Perception: A Comprehensive Review of Deep Learning Integration.</h3>
+                    <p class="research-status">(Published) DOI: 10.3390/s24217034</p>
+                </div>
+                
+                <h4 style="margin: 30px 0 15px; color: #333;">Project Contributions</h4>
+                <div class="research-item">
+                    <h3 class="research-title">Evaluation of Fisheries and Coastal Management Capacity Building Support Project Final Performance Evaluation Report (USAID)</h3>
+                    <p class="research-status">Published 2020</p>
                 </div>
             </div>
         </div>
