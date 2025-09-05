@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Bissih Fred - Curriculum Vitae</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .cv-header {
+            background: linear-gradient(135deg, #2c5f88 0%, #1e4a6b 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .cv-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .cv-header .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+
+        .cv-content {
+            padding: 40px;
+        }
+
+        .cv-section {
+            margin-bottom: 40px;
+        }
+
+        .cv-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c5f88;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9ecef;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .objective {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2c5f88;
+        }
+
+        .education-item, .experience-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #2c5f88;
+        }
+
+        .education-item h3, .experience-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c5f88;
+            margin-bottom: 5px;
+        }
+
+        .institution, .company {
+            font-weight: 500;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .duration {
+            font-style: italic;
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .details {
+            margin-top: 10px;
+        }
+
+        .details ul {
+            padding-left: 20px;
+        }
+
+        .details li {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2c5f88;
+        }
+
+        .skill-category h4 {
+            font-weight: 600;
+            color: #2c5f88;
+            margin-bottom: 10px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-category li {
+            padding: 5px 0;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .skill-category li::before {
+            content: "•";
+            color: #2c5f88;
+            position: absolute;
+            left: 0;
+        }
+
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2c5f88;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .print-btn:hover {
+            background: #1e4a6b;
+            transform: translateY(-2px);
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        @media print {
+            .print-btn, .back-btn {
+                display: none;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+            }
+            
+            body {
+                background: white;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                margin: 10px;
+                border-radius: 0;
+            }
+            
+            .cv-header {
+                padding: 30px 20px;
+            }
+            
+            .cv-header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .cv-content {
+                padding: 30px 20px;
+            }
+            
+            .print-btn, .back-btn {
+                position: relative;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="./website/index.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i>
+        Back to Portfolio
+    </a>
+    
+    <button class="print-btn" onclick="window.print()">
+        <i class="fas fa-print"></i>
+        Print CV
+    </button>
+
+    <div class="cv-container">
+        <header class="cv-header">
+            <h1>BISSIH FRED</h1>
+            <p class="subtitle">PhD Candidate | Aquaculture Nutritionist & Feed Technologist</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>bissihfred@email.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+86 xxx xxxx xxxx</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Zhanjiang, China / Kenya</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn Profile</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="cv-content">
+            <section class="cv-section">
+                <h2 class="section-title">
+                    <i class="fas fa-bullseye"></i>
+                    Career Objective
+                </h2>
+                <div class="objective">
+                    Innovative and results-driven <strong>aquaculture nutritionist and feed technologist</strong> with strong academic and industrial experience in fish feed formulation, nutritional requirement studies, and aquaculture systems. Proven expertise in developing cost-effective feeds using alternative protein sources and conducting large-scale feeding trials. Seeking to leverage advanced knowledge in feed technology to improve fish growth, sustainability, and profitability in Kenya's aquafeed industry.
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education
+                </h2>
+                
+                <div class="education-item">
+                    <h3>PhD in Aquaculture Science (Final Year, 4th Year)</h3>
+                    <div class="institution">Fisheries College, Guangdong Ocean University – Zhanjiang, China</div>
+                    <div class="duration">2021 - 2025 (Expected)</div>
+                    <div class="details">
+                        <ul>
+                            <li><strong>Supervisor:</strong> Prof. Shuyan Chi</li>
+                            <li><strong>Research Focus:</strong> Nutritional requirements of marine fish (Golden pompano) with emphasis on high lipid and amino acid nutrition</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <h3>MSc in Aquaculture Science</h3>
+                    <div class="institution">Chinese Academy of Fishery Sciences / Huzhou University School of Life Science – Zhejiang, China</div>
+                    <div class="duration">2018 - 2020</div>
+                    <div class="details">
+                        <ul>
+                            <li><strong>Supervisor:</strong> Prof. Chenlong Wu</li>
+                            <li><strong>Thesis:</strong> Successful replacement of fishmeal with low gossypol cottonseed meal in the diet of Largemouth Bass (Micropterus salmoides)</li>
+                            <li><strong>Achievement:</strong> Graduated with Distinction</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <h3>BSc in Natural Resources Management (Fisheries & Aquaculture option)</h3>
+                    <div class="institution">University of Energy and Natural Resources – Sunyani, Ghana</div>
+                    <div class="duration">2012 - 2016</div>
+                    <div class="details">
+                        <ul>
+                            <li><strong>Thesis:</strong> Successful replacement of fishmeal with Black Soldier Fly meal in the diet of Nile Tilapia (Oreochromis niloticus)</li>
+                            <li><strong>Achievement:</strong> Graduated with First Class Honors</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    Professional & Research Experience
+                </h2>
+
+                <div class="experience-item">
+                    <h3>PhD Researcher – Aquatic Animal Nutrition & Feed Laboratory</h3>
+                    <div class="company">Guangdong Ocean University, China</div>
+                    <div class="duration">2021 – Present</div>
+                    <div class="details">
+                        <ul>
+                            <li>Designed and executed 7 comprehensive feeding experiments on marine fish nutritional requirements</li>
+                            <li>Conducted two-year sea cage feeding trials on Golden pompano, optimizing growth performance by 18%</li>
+                            <li>Completed industrial internship at Guangdong Yuehai Feed Company, formulating novel commercial feeds for Golden pompano that reduced production costs by 12%</li>
+                            <li>Developed innovative high-lipid feed formulations that improved feed conversion ratio by 0.3 points</li>
+                            <li>Published research findings in peer-reviewed journals on amino acid and lipid requirements</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>MSc Researcher – Key Laboratory of Aquatic Animal Genetic Breeding and Nutrition</h3>
+                    <div class="company">Chinese Academy of Fishery Sciences / Huzhou University, China</div>
+                    <div class="duration">2018 – 2020</div>
+                    <div class="details">
+                        <ul>
+                            <li>Participated in advanced research on freshwater fish feed formulations and nutritional biochemistry</li>
+                            <li>Developed cost-effective protein replacement strategies for largemouth bass, achieving 80% fishmeal replacement</li>
+                            <li>Optimized feed pellet extrusion parameters for improved water stability and palatability</li>
+                            <li>Collaborated with industry partners to translate research findings into commercial applications</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Teaching Assistant & National Service Personnel</h3>
+                    <div class="company">University of Energy and Natural Resources, Ghana</div>
+                    <div class="duration">2016 – 2017</div>
+                    <div class="details">
+                        <ul>
+                            <li>Assisted in teaching aquaculture and fisheries management courses to 120+ undergraduate students</li>
+                            <li>Provided hands-on training in pond culture techniques and fish nutrition to 45 students</li>
+                            <li>Supervised practical sessions on water quality management and fish feed formulation</li>
+                            <li>Coordinated field trips to commercial aquaculture facilities for experiential learning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Industrial Attachment – Aquatic Feed & Nutrition Department</h3>
+                    <div class="company">Aquaculture Research and Development Center (ARDEC), Akosombo, Ghana</div>
+                    <div class="duration">2015</div>
+                    <div class="details">
+                        <ul>
+                            <li>Received professional training in feed formulation and production for tilapia and catfish under Dr. K. Anani</li>
+                            <li>Gained practical experience with the renowned ARDEC fish feed production process</li>
+                            <li>Assisted in quality control of raw materials and finished feed products</li>
+                            <li>Participated in feeding trials evaluating growth performance of different fish strains</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">
+                    <i class="fas fa-cogs"></i>
+                    Technical Skills
+                </h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Feed Formulation & Production</h4>
+                        <ul>
+                            <li>Expert in formulation of freshwater and marine fish feeds</li>
+                            <li>Proficient with least-cost feed formulation software</li>
+                            <li>Experienced in extrusion technology and pellet production</li>
+                            <li>Skilled in feed quality assessment and stability testing</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Fish Nutrition & Physiology</h4>
+                        <ul>
+                            <li>Strong expertise in amino acid and lipid requirements</li>
+                            <li>Advanced knowledge of digestive physiology</li>
+                            <li>Experienced in nutritional biochemistry</li>
+                            <li>Proficient in nutrient requirement studies</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Aquaculture Systems</h4>
+                        <ul>
+                            <li>Practical experience with pond culture systems</li>
+                            <li>Knowledge of water quality management</li>
+                            <li>Skilled in fish health assessment</li>
+                            <li>Experience with marine sea cage farming</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Research & Data Analysis</h4>
+                        <ul>
+                            <li>Proficiency in experimental design</li>
+                            <li>Expert in growth performance analysis</li>
+                            <li>Skilled in biochemical assays</li>
+                            <li>Advanced statistical data interpretation (R, SPSS)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">
+                    <i class="fas fa-plus-circle"></i>
+                    Additional Skills
+                </h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Professional Skills</h4>
+                        <ul>
+                            <li>Teamwork & Leadership in multicultural environments</li>
+                            <li>Scientific Communication & Research dissemination</li>
+                            <li>Teaching & Mentoring junior researchers</li>
+                            <li>International Collaboration across cultures</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h4>Languages & Personal</h4>
+                        <ul>
+                            <li>Fluent in English</li>
+                            <li>Intermediate Chinese</li>
+                            <li>Basic French</li>
+                            <li>Professional swimming coach, footballer, pianist, guitarist</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cv-section">
+                <h2 class="section-title">
+                    <i class="fas fa-users"></i>
+                    References
+                </h2>
+                <div class="objective">
+                    Available upon request
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

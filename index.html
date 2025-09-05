@@ -4,13 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Bissih Fred - Portfolio</title>
-    <script>
-        // Redirect to the website folder
-        window.location.href = './website/index.html';
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #2c5f88 0%, #1e4a6b 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            background: rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-primary {
+            background: rgba(255,255,255,0.9);
+            color: #2c5f88;
+        }
+        
+        .btn-primary:hover {
+            background: white;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .container { margin: 20px; padding: 30px; }
+            .buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to portfolio website...</p>
-    <p>If you're not redirected automatically, <a href="./website/index.html">click here</a>.</p>
+    <div class="container">
+        <h1>Dr. Bissih Fred</h1>
+        <p class="subtitle">Aquaculture Nutritionist & Feed Technologist</p>
+        <div class="buttons">
+            <a href="./website/index.html" class="btn btn-primary">View Portfolio</a>
+            <a href="./cv.html" class="btn">View CV</a>
+        </div>
+    </div>
 </body>
 </html>
